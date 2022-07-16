@@ -89,7 +89,6 @@
         let apiUrl = `${pg.apiBaseUrl}/inward/post-from-sdk`
         let response = {}
         await apiPost(apiUrl, parameters, pg.publicKey).then(resp=>{response=resp}).catch(e=>console.error(e))
-        console.log(response)
         pg.traceId = response.traceId
         pg.reference = response.reference
         if (response.responseCode !== pg.successCode){
@@ -166,13 +165,10 @@
                     let request = {traceId: self.traceId, reference: self.reference}
                     let url = `${self.apiBaseUrl}/inward/tsq`
                     await apiPost(url, request, self.publicKey).then(resp=>{response=resp}).catch(e=>console.error(e))
-                    console.log(response)
                     if (response.responseCode === self.successCode) {
-                        console.log(response.responseCode)
                         self.executeFunction(self.defaults.onSuccess, request)
                     }
                     else if (response.responseCode === self.cancelCode) {
-                        console.log(response.responseCode)
                         self.executeFunction(self.defaults.onCancel, request)
                     }
                 }

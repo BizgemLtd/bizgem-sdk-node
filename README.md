@@ -50,7 +50,7 @@ This describes how to collect payment by transfer on bizgem.
 
 
 ```javascript
-const Bizgem = require('bizgem-sdk-node');
+import {BPG} from 'bizgem-sdk-node';
 
 function generateUUID() {
     let d = new Date().getTime();

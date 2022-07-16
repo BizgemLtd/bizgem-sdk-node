@@ -95,7 +95,7 @@ payWithBankTransfer()
 
 ### How to use with CDN
 
-`<script src="https://cdn.bizgem.io/sdk/1.0.2/index.js"/>`
+`<script src="https://cdn.bizgem.io/sdk/1.0.2/index.js"></script>`
 
 ## COLLECTION
 

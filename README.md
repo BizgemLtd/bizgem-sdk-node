@@ -74,7 +74,7 @@ function onFailure(data){
 
 function payWithBankTransfer() {
     BPG.pay({
-        publicKey:"PK-00000000030000000003-PROD-NI0MJEZNDQ2ODY1NDUZTED025282E9CCA968BEEFD98089D3CDAC4053FE49FA422B92F290F5472D474A11", //(required) your public key, this gotten from dashboard
+        publicKey:"PK-00000001110000000111-PROD-E9CCA968BEEFD98089D3CDAC4053FE49FA422B92F290FQWWEFEFRF", //(required) your public key, this gotten from dashboard
         fullName:"Anthony Morah", //(required) name of the person paying
         email:"cmmorah1@gmail.com", //(required) email of the person paying
         phoneNumber:"09049957786", //(required) phone number of the person paying

@@ -124,8 +124,6 @@ payWithBankTransfer()
           return uuid.toUpperCase();
       }
 
-      let reference = generateUUID()
-
       function payWithBankTransfer() {
           console.log(">>>>>>")
           BPG.pay({

@@ -74,7 +74,7 @@ function onFailure(data){
 
 function payWithBankTransfer() {
     BPG.pay({
-        publicKey:"PK-00000001110000000111-PROD-E9CCA968BEEFD98089D3CDAC4053FE49FA422B92F290FQWWEFEFRF", //(required) your public key, this gotten from dashboard
+        publicKey:"PK-00000001110000000111-PROD-E9CCA968BEEFD98089D3CDAC4053FE49FA422B92F290FQWWEFEFRF", //(required) your public key, this is gotten from dashboard
         fullName:"Anthony Morah", //(required) name of the person paying
         email:"cmmorah1@gmail.com", //(required) email of the person paying
         phoneNumber:"09049957786", //(required) phone number of the person paying
@@ -129,18 +129,18 @@ payWithBankTransfer()
       function payWithBankTransfer() {
           console.log(">>>>>>")
           BPG.pay({
-              publicKey:"PK-00000000030000000003-PROD-NI0MJEZNDQ2ODY1NDUZTED025282E9CCA968BEEFD98089D3CDAC4053FE49FA422B92F290F5472D474A11",
-              fullName:"Anthony Morah",
-              email:"cmmorah1@gmail.com",
-              phoneNumber:"09049957786",
-              amount:"100",
-              narration:"Test Sdk Example",
-              reference:reference,
-              logo:null,
-              redirectUrl:null,//"http://localhost:63343/",
-              onCancel:onCancel,
-              onSuccess:onSuccess,
-              onFailure:onFailure
+              publicKey:"PK-00000001110000000111-PROD-E9CCA968BEEFD98089D3CDAC4053FE49FA422B92F290FQWWEFEFRF", //(required) your public key, this is gotten from dashboard
+              fullName:"Anthony Morah", //(required) name of the person paying
+              email:"cmmorah1@gmail.com", //(required) email of the person paying
+              phoneNumber:"09049957786", //(required) phone number of the person paying
+              amount:"100", //(required) the transaction amount
+              narration:"Test Sdk Example",//(required) description of the transaction
+              reference:generateUUID(), //(optional) unique transaction identifier
+              logo:null, // (optional) logo url
+              redirectUrl:"http://localhost:63343/", // (optional) when the value is null it assumes the current url
+              onCancel:onCancel, // (optional) the function to be triggered on a cancelled transaction
+              onSuccess:onSuccess, // (optional) the function to be triggered on a successful transaction
+              onFailure:onFailure // (optional) the function to be triggered on a failed transaction
           })
       }
       function onCancel(data){

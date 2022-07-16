@@ -95,7 +95,7 @@ payWithBankTransfer()
 
 ### How to use with CDN
 
-`<script src="https://cdn.bizgem.io/sdk/1.0.2/index.js"></script>`
+`<script src="https://cdn.bizgem.io/sdk/1.0.2/bpg-sdk.min.js"></script>`
 
 ## COLLECTION
 
@@ -109,7 +109,7 @@ payWithBankTransfer()
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://cdn.bizgem.io/sdk/1.0.2/index.js"></script>
+    <script src="https://cdn.bizgem.io/sdk/1.0.2/bpg-sdk.min.js"></script>
 </head>
 <body>
   <button onclick="payWithBankTransfer()">Pay With Bank Transfer</button>

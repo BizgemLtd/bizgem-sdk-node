@@ -109,7 +109,7 @@ payWithBankTransfer()
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="https://cdn.bizgem.io/sdk/1.0.2/index.js"/>
+    <script src="https://cdn.bizgem.io/sdk/1.0.2/index.js"></script>
 </head>
 <body>
   <button onclick="payWithBankTransfer()">Pay With Bank Transfer</button>

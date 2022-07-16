@@ -1,12 +1,28 @@
 {
   "name": "bizgem-sdk-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "The Official NodeJS Library For Bizgem APIs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "payment",
+    "sdk",
+    "bizgem",
+    "transfer",
+    "account number",
+    "nigeria",
+    "fintech"
+  ],
+  "author": "Anthony Morah",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BizgemLtd/bizgem-sdk-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BizgemLtd/bizgem-sdk-node/issues"
+  },
+  "homepage": "https://github.com/BizgemLtd/bizgem-sdk-node#readme"
 }

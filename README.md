@@ -12,7 +12,7 @@
 
 
 
-### How to use
+### How to use with Nodejs SDK
 
 `npm install bizgem-sdk-node`
 
@@ -91,4 +91,68 @@ function payWithBankTransfer() {
 
 payWithBankTransfer()
 
+```
+
+### How to use with CDN
+
+`<script src="https://cdn.bizgem.io/sdk/1.0.2/index.js"/>`
+
+## COLLECTION
+
+
+### ```payment by transfer```
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bizgem.io/sdk/1.0.2/index.js"/>
+</head>
+<body>
+  <button onclick="payWithBankTransfer()">Pay With Bank Transfer</button>
+  <script>
+      function generateUUID() {
+          let d = new Date().getTime();
+          let uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c) {
+              let r = (d + Math.random()*16)%16 | 0;
+              d = Math.floor(d/16);
+              return (c==='x' ? r : (r&0x7|0x8)).toString(16);
+          });
+          return uuid.toUpperCase();
+      }
+
+      let reference = generateUUID()
+
+      function payWithBankTransfer() {
+          console.log(">>>>>>")
+          BPG.pay({
+              publicKey:"PK-00000000030000000003-PROD-NI0MJEZNDQ2ODY1NDUZTED025282E9CCA968BEEFD98089D3CDAC4053FE49FA422B92F290F5472D474A11",
+              fullName:"Anthony Morah",
+              email:"cmmorah1@gmail.com",
+              phoneNumber:"09049957786",
+              amount:"100",
+              narration:"Test Sdk Example",
+              reference:reference,
+              logo:null,
+              redirectUrl:null,//"http://localhost:63343/",
+              onCancel:onCancel,
+              onSuccess:onSuccess,
+              onFailure:onFailure
+          })
+      }
+      function onCancel(data){
+          console.log('Transaction Cancelled',data)
+      }
+      function onSuccess(data){
+          console.log('Transaction Succeeded',data)
+      }
+      function onFailure(data){
+          console.log('Transaction Failed',data)
+      }
+  </script>
+</body>
+</html>
 ```

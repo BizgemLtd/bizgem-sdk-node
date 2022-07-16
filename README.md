@@ -52,23 +52,43 @@ This describes how to collect payment by transfer on bizgem.
 ```javascript
 const Bizgem = require('bizgem-sdk-node');
 
-const payWithBankTransfer = () => {
-    Bizgem.pay({
-        publicKey:"PK-00000000990000000099-PROD-NI0MJEZNDQ2ODY1NDUZTED025282E9CCA968BEEFD98089D3CDAC4053FE49FWBNHAGRIIAFJE",
-        fullName:"Anthony Morah",
-        email:"cmmorah1@gmail.com",
-        phoneNumber:"09049957786",
-        amount:"100",
-        narration:"Test Sdk Example",
-        logo:null,
-        redirectUrl:"http://localhost:63343/",
-        onCancel:onCancel,
-        onSuccess:onSuccess,
-        onFailure:onFailure,
-        reference:reference
+function generateUUID() {
+    let d = new Date().getTime();
+    let uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c) {
+        let r = (d + Math.random()*16)%16 | 0;
+        d = Math.floor(d/16);
+        return (c==='x' ? r : (r&0x7|0x8)).toString(16);
+    });
+    return 'BZIGEM-'+uuid.toUpperCase();
+}
+
+function onCancel(data){
+    console.log('Transaction Cancelled',data)
+}
+function onSuccess(data){
+    console.log('Transaction Succeeded',data)
+}
+function onFailure(data){
+    console.log('Transaction Failed',data)
+}
+
+function payWithBankTransfer() {
+    BPG.pay({
+        publicKey:"PK-00000000030000000003-PROD-NI0MJEZNDQ2ODY1NDUZTED025282E9CCA968BEEFD98089D3CDAC4053FE49FA422B92F290F5472D474A11", //(required) your public key, this gotten from dashboard
+        fullName:"Anthony Morah", //(required) name of the person paying
+        email:"cmmorah1@gmail.com", //(required) email of the person paying
+        phoneNumber:"09049957786", //(required) phone number of the person paying
+        amount:"100", //(required) the transaction amount
+        narration:"Test Sdk Example",//(required) description of the transaction
+        reference:generateUUID(), //(optional) unique transaction identifier
+        logo:null, // (optional) logo url
+        redirectUrl:"http://localhost:63343/", // (optional) when the value is null it assumes the current url
+        onCancel:onCancel, // (optional) the function to be triggered on a cancelled transaction
+        onSuccess:onSuccess, // (optional) the function to be triggered on a successful transaction
+        onFailure:onFailure // (optional) the function to be triggered on a failed transaction
     })
 }
 
-payWithBankTransfer();
+payWithBankTransfer()
 
 ```

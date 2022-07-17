@@ -80,7 +80,7 @@ function payWithBankTransfer() {
         phoneNumber:"09049957786", //(required) phone number of the person paying
         amount:"100", //(required) the transaction amount
         narration:"Test Sdk Example",//(required) description of the transaction
-        reference:generateUUID(), //(optional) unique transaction identifier
+        reference:generateUUID(), //(required) unique transaction identifier
         logo:null, // (optional) logo url
         redirectUrl:"http://localhost:63343/", // (optional) when the value is null it assumes the current url
         onCancel:onCancel, // (optional) the function to be triggered on a cancelled transaction
@@ -125,7 +125,6 @@ payWithBankTransfer()
       }
 
       function payWithBankTransfer() {
-          console.log(">>>>>>")
           BPG.pay({
               publicKey:"PK-00000001110000000111-PROD-E9CCA968BEEFD98089D3CDAC4053FE49FA422B92F290FQWWEFEFRF", //(required) your public key, this is gotten from dashboard
               fullName:"Anthony Morah", //(required) name of the person paying
@@ -133,7 +132,7 @@ payWithBankTransfer()
               phoneNumber:"09049957786", //(required) phone number of the person paying
               amount:"100", //(required) the transaction amount
               narration:"Test Sdk Example",//(required) description of the transaction
-              reference:generateUUID(), //(optional) unique transaction identifier
+              reference:generateUUID(), //(required) unique transaction identifier
               logo:null, // (optional) logo url
               redirectUrl:"http://localhost:63343/", // (optional) when the value is null it assumes the current url
               onCancel:onCancel, // (optional) the function to be triggered on a cancelled transaction
